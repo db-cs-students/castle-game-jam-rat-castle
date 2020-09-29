@@ -2,7 +2,9 @@
     "name": "Castle Game Jam",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "tilemaps": "github:microsoft/pxt-tilemaps#v1.9.2",
+        "color-coded-tilemap": "*"
     },
     "files": [
         "main.ts",
