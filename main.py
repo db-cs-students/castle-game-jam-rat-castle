@@ -38,22 +38,25 @@ scene.set_tile(4,
     img("""
         . . . 4 . . . 4 . . 4 . . . 4 4
         . 4 4 4 . 4 4 4 . 4 4 . . 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 2 4 4
-        4 4 4 4 4 4 4 5 4 4 4 4 4 2 2 4
-        4 4 4 4 4 4 4 4 5 5 4 4 4 4 2 4
-        4 4 4 5 5 5 4 4 4 5 5 4 4 4 2 4
-        4 4 5 5 4 5 4 4 4 4 5 5 4 4 4 2
-        4 5 4 4 4 5 5 4 4 4 4 5 5 4 4 4
-        4 4 4 4 4 4 5 5 5 5 5 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 5 4 4 4 4 4
-        2 2 4 4 4 4 4 4 4 4 5 5 4 4 4 4
-        4 2 2 4 4 4 4 4 4 4 4 5 5 5 5 4
-        4 4 4 2 2 2 2 4 4 4 4 4 4 4 4 4
-        4 5 4 4 4 4 4 2 4 4 4 4 4 4 4 4
-        4 4 5 5 4 4 4 2 2 2 4 4 4 4 4 4
-        4 4 4 4 5 5 5 4 4 2 2 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     """),
     )
+info.set_score(0)
+info.set_life(3)
+
 #Setup character
 average_joe = sprites.create(img("""
     ...........eeeeeee..............
@@ -89,13 +92,13 @@ average_joe = sprites.create(img("""
     ............eee.eee.............
     ............eeeeeeee............
 """))
-controller.move_sprite(average_joe, 75, 0)
+controller.move_sprite(average_joe, 90, 0)
 average_joe.set_position(15, 75)
 scene.camera_follow_sprite(average_joe)
 def on_event_pressed():
-    average_joe.vy = -125
+    average_joe.vy = -150
 controller.A.on_event(ControllerButtonEvent.PRESSED, on_event_pressed)
-average_joe.ay = 150
+average_joe.ay = 200
 average_joe.set_kind(SpriteKind.player)
 
 #Make gun
@@ -133,7 +136,7 @@ def on_event_pressed2():
     ................................
     ................................
     ................................
-    """), average_joe, 50, 0)
+    """), average_joe, 200, 0)
 controller.B.on_event(ControllerButtonEvent.PRESSED, on_event_pressed2)
 
 
@@ -255,9 +258,15 @@ rat3.ay = 150
 def on_overlap(sprite, otherSprite):
     sprite.destroy()
     otherSprite.destroy()
+    info.change_score_by(1)
 sprites.on_overlap(SpriteKind.enemy, SpriteKind.projectile, on_overlap)
 
 #Make lava work
 def on_hit_tile(sprite):
     average_joe.destroy()
 scene.on_hit_tile(SpriteKind.player, 4, on_hit_tile)
+
+#Make rats kill joe
+def on_overlap2(sprite, otherSprite):
+    info.change_life_by(-1)
+sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap2)

@@ -36,21 +36,23 @@ scene.setTile(14, img`
 scene.setTile(4, img`
         . . . 4 . . . 4 . . 4 . . . 4 4
         . 4 4 4 . 4 4 4 . 4 4 . . 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 2 4 4
-        4 4 4 4 4 4 4 5 4 4 4 4 4 2 2 4
-        4 4 4 4 4 4 4 4 5 5 4 4 4 4 2 4
-        4 4 4 5 5 5 4 4 4 5 5 4 4 4 2 4
-        4 4 5 5 4 5 4 4 4 4 5 5 4 4 4 2
-        4 5 4 4 4 5 5 4 4 4 4 5 5 4 4 4
-        4 4 4 4 4 4 5 5 5 5 5 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 5 4 4 4 4 4
-        2 2 4 4 4 4 4 4 4 4 5 5 4 4 4 4
-        4 2 2 4 4 4 4 4 4 4 4 5 5 5 5 4
-        4 4 4 2 2 2 2 4 4 4 4 4 4 4 4 4
-        4 5 4 4 4 4 4 2 4 4 4 4 4 4 4 4
-        4 4 5 5 4 4 4 2 2 2 4 4 4 4 4 4
-        4 4 4 4 5 5 5 4 4 2 2 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     `)
+info.setScore(0)
+info.setLife(3)
 // Setup character
 let average_joe = sprites.create(img`
     ...........eeeeeee..............
@@ -86,13 +88,13 @@ let average_joe = sprites.create(img`
     ............eee.eee.............
     ............eeeeeeee............
 `)
-controller.moveSprite(average_joe, 75, 0)
+controller.moveSprite(average_joe, 90, 0)
 average_joe.setPosition(15, 75)
 scene.cameraFollowSprite(average_joe)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
-    average_joe.vy = -125
+    average_joe.vy = -150
 })
-average_joe.ay = 150
+average_joe.ay = 200
 average_joe.setKind(SpriteKind.Player)
 // Make gun
 controller.B.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed2() {
@@ -129,7 +131,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed2()
     ................................
     ................................
     ................................
-    `, average_joe, 50, 0)
+    `, average_joe, 200, 0)
 })
 // Make enemies
 let rat = sprites.create(img`
@@ -246,8 +248,13 @@ rat3.ay = 150
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     sprite.destroy()
     otherSprite.destroy()
+    info.changeScoreBy(1)
 })
 // Make lava work
 scene.onHitTile(SpriteKind.Player, 4, function on_hit_tile(sprite: Sprite) {
     average_joe.destroy()
+})
+// Make rats kill joe
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
+    info.changeLifeBy(-1)
 })
