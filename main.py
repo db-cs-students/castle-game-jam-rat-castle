@@ -153,13 +153,13 @@ scene.set_tile(14,
         b b b b b b b b b b b b b b b f
         b b b b b b b b b b b b b b b f
         f f f f f f f f f f f f f f f f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
         f f f f f f f f f f f f f f f f
     """),
     True)
@@ -184,21 +184,21 @@ scene.set_tile(4,
     """),
     True)
 scene.set_tile(15, img("""
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
     f f f f f f f f f f f f f f f f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
     f f f f f f f f f f f f f f f f
 """))
 info.set_score(0)
@@ -327,11 +327,11 @@ def on_event_pressed2():
         ................................................................
         ................................................................
         ................................................................
-        ......................................................111.......
-        .....................................................11111......
-        .....................................................11111......
-        .....................................................11111......
-        ......................................................111.......
+        ......................................................555.......
+        .....................................................55511......
+        ....................................................5555515.....
+        .....................................................55555......
+        ......................................................555.......
         ................................................................
         ................................................................
         ................................................................
@@ -389,7 +389,6 @@ def on_event_pressed2():
         ............eeeeeeee............
     """))
 controller.B.on_event(ControllerButtonEvent.PRESSED, on_event_pressed2)
-
 
 #Make enemies
 rat = sprites.create(img("""
@@ -510,16 +509,19 @@ def on_overlap(sprite, otherSprite):
     sprite.destroy()
     otherSprite.destroy()
     info.change_score_by(5)
+    music.ba_ding.play()
 sprites.on_overlap(SpriteKind.enemy, SpriteKind.projectile, on_overlap)
 
 #Make lava work
 def on_hit_tile(sprite):
     info.change_life_by(-1)
+    game.splash("You tried to swim in lava! What were you thinking?")
 scene.on_hit_tile(SpriteKind.player, 4, on_hit_tile)
 
 #Make rats kill joe
 def on_overlap2(sprite, otherSprite):
     info.change_life_by(-1)
+    game.splash("Don't bump into the rats, you idiot!")
 sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap2)
 
 #Make giant rat
@@ -677,9 +679,10 @@ def on_destroyed(sprite):
     """), giant_rat, -60, 50)
 sprites.on_destroyed(SpriteKind.projectile, on_destroyed)
 giant_rat.set_kind(SpriteKind.food)
-#Make fireballs kill joe
+#Make cough kill joe
 def on_overlap3(sprite, otherSprite):
     info.change_life_by(-1)
+    game.splash("Don't you know? Corona kills.")
 sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap3)
 def on_destroyed2(sprite):
     average_joe.set_position(15, 190)
@@ -698,4 +701,8 @@ def on_overlap4(sprite, otherSprite):
     game.win_effect
     average_joe.say("I win!")
     game.splash("You win!")
+    music.ba_ding.play()
 sprites.on_overlap(SpriteKind.food, SpriteKind.projectile, on_overlap4)
+
+#make enemies move
+rat.set_velocity(50, 0)

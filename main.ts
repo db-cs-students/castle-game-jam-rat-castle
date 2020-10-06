@@ -153,13 +153,13 @@ scene.setTile(14, img`
         b b b b b b b b b b b b b b b f
         b b b b b b b b b b b b b b b f
         f f f f f f f f f f f f f f f f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
-        b b b b b b b f b b b b b b b f
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
+        b b b b b b b b f b b b b b b b
         f f f f f f f f f f f f f f f f
     `, true)
 scene.setTile(4, img`
@@ -181,21 +181,21 @@ scene.setTile(4, img`
         4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     `, true)
 scene.setTile(15, img`
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
-    c c c c c c c c c c c c c c c f
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
+    f c c c c c c c c c c c c c c c
     f f f f f f f f f f f f f f f f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
-    c c c c c c c f c c c c c c c f
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
+    c c c c c c c f c c c c c c c c
     f f f f f f f f f f f f f f f f
 `)
 info.setScore(0)
@@ -322,11 +322,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed2()
         ................................................................
         ................................................................
         ................................................................
-        ......................................................111.......
-        .....................................................11111......
-        .....................................................11111......
-        .....................................................11111......
-        ......................................................111.......
+        ......................................................555.......
+        .....................................................55511......
+        ....................................................5555515.....
+        .....................................................55555......
+        ......................................................555.......
         ................................................................
         ................................................................
         ................................................................
@@ -500,14 +500,17 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function on_overlap(s
     sprite.destroy()
     otherSprite.destroy()
     info.changeScoreBy(5)
+    music.baDing.play()
 })
 // Make lava work
 scene.onHitTile(SpriteKind.Player, 4, function on_hit_tile(sprite: Sprite) {
     info.changeLifeBy(-1)
+    game.splash("You tried to swim in lava! What were you thinking?")
 })
 // Make rats kill joe
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
     info.changeLifeBy(-1)
+    game.splash("Don't bump into the rats, you idiot!")
 })
 // Make giant rat
 let giant_rat = sprites.create(img`
@@ -664,9 +667,10 @@ sprites.onDestroyed(SpriteKind.Projectile, function on_destroyed(sprite: Sprite)
     `, giant_rat, -60, 50)
 })
 giant_rat.setKind(SpriteKind.Food)
-// Make fireballs kill joe
+// Make cough kill joe
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function on_overlap3(sprite: Sprite, otherSprite: Sprite) {
     info.changeLifeBy(-1)
+    game.splash("Don't you know? Corona kills.")
 })
 sprites.onDestroyed(SpriteKind.Player, function on_destroyed2(sprite: Sprite) {
     average_joe.setPosition(15, 190)
@@ -682,4 +686,7 @@ sprites.onOverlap(SpriteKind.Food, SpriteKind.Projectile, function on_overlap4(s
     game.winEffect
     average_joe.say("I win!")
     game.splash("You win!")
+    music.baDing.play()
 })
+// make enemies move
+rat.setVelocity(50, 0)
