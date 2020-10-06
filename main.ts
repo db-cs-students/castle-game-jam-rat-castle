@@ -6,21 +6,21 @@ Description: You fight rats in a Castle
  */
 // Setup game
 scene.setTileMap(img`
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ffeeeeee.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ffeee.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.feeee.ff.ff.ff.ff.ff.ff.ff.feeef.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.feee
-    eeeeeeee.ff.ff.feeeeeeeeeeeeeeeeeeeeff.ff.ff.ff.ff.ff.ff.ef.ff.ff.feee
-    eeeeeeee44444444eeeeeeeeeeeeeeeeeeee444444444444444444444eeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ffeeeeee.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ffeee.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.feeee.ff.ff.ff.ff.ff.ff.ff.ff.feeef.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.feeeee
+    eeeeeeee.ff.ff.fe2eeeeeeeeeeeeeeeeeee3eff.ff.ff.ff.ff.ff.ff.ef.ff.ff.feeeee
+    eeeeeeee44444444eeeeeeeeeeeeeeeeeeeeeee444444444444444444444eeeeeeeeeeeeeee
 `)
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -153,13 +153,13 @@ scene.setTile(14, img`
         b b b b b b b b b b b b b b b f
         b b b b b b b b b b b b b b b f
         f f f f f f f f f f f f f f f f
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
         f f f f f f f f f f f f f f f f
     `, true)
 scene.setTile(4, img`
@@ -198,6 +198,42 @@ scene.setTile(15, img`
     c c c c c c c f c c c c c c c c
     f f f f f f f f f f f f f f f f
 `)
+scene.setTile(2, img`
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    f f f f f f f f f f f f f f f f
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    f f f f f f f f f f f f f f f f
+`, true)
+scene.setTile(3, img`
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    f f f f f f f f f f f f f f f f
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    f f f f f f f f f f f f f f f f
+`, true)
 info.setScore(0)
 info.setLife(1)
 // Setup character
@@ -419,7 +455,7 @@ let rat = sprites.create(img`
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 `)
-rat.setPosition(300, 190)
+rat.setPosition(350, 190)
 rat.setKind(SpriteKind.Enemy)
 rat.ay = 150
 let rat2 = sprites.create(img`
@@ -456,7 +492,7 @@ let rat2 = sprites.create(img`
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 `)
-rat2.setPosition(400, 190)
+rat2.setPosition(450, 190)
 rat2.setKind(SpriteKind.Enemy)
 rat2.ay = 150
 let rat3 = sprites.create(img`
@@ -493,7 +529,7 @@ let rat3 = sprites.create(img`
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 `)
-rat3.setPosition(500, 190)
+rat3.setPosition(550, 190)
 rat3.setKind(SpriteKind.Enemy)
 rat3.ay = 150
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
@@ -676,9 +712,9 @@ sprites.onDestroyed(SpriteKind.Player, function on_destroyed2(sprite: Sprite) {
     average_joe.setPosition(15, 190)
 })
 // Make time limited
-info.startCountdown(25)
+info.startCountdown(600)
 // make title screen
-game.splash("Rat Castle")
+game.splash("Rat Castle:")
 // Make big rat die
 sprites.onOverlap(SpriteKind.Food, SpriteKind.Projectile, function on_overlap4(sprite: Sprite, otherSprite: Sprite) {
     giant_rat.destroy()
@@ -687,6 +723,19 @@ sprites.onOverlap(SpriteKind.Food, SpriteKind.Projectile, function on_overlap4(s
     average_joe.say("I win!")
     game.splash("You win!")
     music.baDing.play()
+    game.over()
 })
 // make enemies move
-rat.setVelocity(50, 0)
+rat.setVelocity(-50, 0)
+rat2.setVelocity(-50, 0)
+rat3.setVelocity(-50, 0)
+scene.onHitTile(SpriteKind.Enemy, 2, function on_hit_tile3(sprite: Sprite) {
+    rat.setVelocity(50, 0)
+    rat2.setVelocity(50, 0)
+    rat3.setVelocity(50, 0)
+})
+scene.onHitTile(SpriteKind.Enemy, 3, function on_hit_tile4(sprite: Sprite) {
+    rat.setVelocity(-50, 0)
+    rat2.setVelocity(-50, 0)
+    rat3.setVelocity(-50, 0)
+})

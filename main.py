@@ -5,21 +5,21 @@ Description: You fight rats in a Castle
 """
 #Setup game
 scene.set_tile_map(img("""
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ffeeeeee.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ffeee.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.feeee.ff.ff.ff.ff.ff.ff.ff.feeef.ff.ff.ff.ff.ff.ff.ff.ff.ff.f
-    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.feee
-    eeeeeeee.ff.ff.feeeeeeeeeeeeeeeeeeeeff.ff.ff.ff.ff.ff.ff.ef.ff.ff.feee
-    eeeeeeee44444444eeeeeeeeeeeeeeeeeeee444444444444444444444eeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ffeeeeee.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ffeee.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.feeee.ff.ff.ff.ff.ff.ff.ff.ff.feeef.ff.ff.ff.ff.ff.ff.ff.ff.ff.fee
+    ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.ff.feeeee
+    eeeeeeee.ff.ff.fe2eeeeeeeeeeeeeeeeeee3eff.ff.ff.ff.ff.ff.ff.ef.ff.ff.feeeee
+    eeeeeeee44444444eeeeeeeeeeeeeeeeeeeeeee444444444444444444444eeeeeeeeeeeeeee
 """))
 scene.set_background_image(img("""
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -153,13 +153,13 @@ scene.set_tile(14,
         b b b b b b b b b b b b b b b f
         b b b b b b b b b b b b b b b f
         f f f f f f f f f f f f f f f f
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
-        b b b b b b b b f b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
+        b b b b b b b f b b b b b b b b
         f f f f f f f f f f f f f f f f
     """),
     True)
@@ -201,6 +201,42 @@ scene.set_tile(15, img("""
     c c c c c c c f c c c c c c c c
     f f f f f f f f f f f f f f f f
 """))
+scene.set_tile(2, img("""
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    f f f f f f f f f f f f f f f f
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    f f f f f f f f f f f f f f f f
+"""), True)
+scene.set_tile(3, img("""
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    b b b b b b b b b b b b b b b f
+    f f f f f f f f f f f f f f f f
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    b b b b b b b f b b b b b b b b
+    f f f f f f f f f f f f f f f f
+"""), True)
 info.set_score(0)
 info.set_life(1)
 
@@ -425,7 +461,7 @@ rat = sprites.create(img("""
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 """))
-rat.set_position(300, 190)
+rat.set_position(350, 190)
 rat.set_kind(SpriteKind.enemy)
 rat.ay = 150
 
@@ -463,7 +499,7 @@ rat2 = sprites.create(img("""
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 """))
-rat2.set_position(400, 190)
+rat2.set_position(450, 190)
 rat2.set_kind(SpriteKind.enemy)
 rat2.ay = 150
 
@@ -501,7 +537,7 @@ rat3 = sprites.create(img("""
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 """))
-rat3.set_position(500, 190)
+rat3.set_position(550, 190)
 rat3.set_kind(SpriteKind.enemy)
 rat3.ay = 150
 
@@ -689,10 +725,10 @@ def on_destroyed2(sprite):
 sprites.on_destroyed(SpriteKind.player, on_destroyed2)
 
 #Make time limited
-info.start_countdown(25)
+info.start_countdown(600)
 
 #make title screen
-game.splash("Rat Castle")
+game.splash("Rat Castle:")
 
 #Make big rat die
 def on_overlap4(sprite, otherSprite):
@@ -702,7 +738,21 @@ def on_overlap4(sprite, otherSprite):
     average_joe.say("I win!")
     game.splash("You win!")
     music.ba_ding.play()
+    game.over()
 sprites.on_overlap(SpriteKind.food, SpriteKind.projectile, on_overlap4)
 
 #make enemies move
-rat.set_velocity(50, 0)
+rat.set_velocity(-50, 0)
+rat2.set_velocity(-50, 0)
+rat3.set_velocity(-50, 0)
+def on_hit_tile3(sprite):
+    rat.set_velocity(50, 0)
+    rat2.set_velocity(50, 0)
+    rat3.set_velocity(50, 0)
+scene.on_hit_tile(SpriteKind.enemy, 2, on_hit_tile3)
+
+def on_hit_tile4(sprite):
+    rat.set_velocity(-50, 0)
+    rat2.set_velocity(-50, 0)
+    rat3.set_velocity(-50, 0)
+scene.on_hit_tile(SpriteKind.enemy, 3, on_hit_tile4)
