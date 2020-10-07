@@ -737,7 +737,7 @@ sprites.onDestroyed(SpriteKind.Player, function on_destroyed2(sprite: Sprite) {
 // Make time limited
 info.startCountdown(25)
 // make title screen
-game.splash("Rat Castle")
+game.splash("Rat Castle: 'The princess is in another castle.'")
 // Make big rat die
 sprites.onOverlap(SpriteKind.Food, SpriteKind.Projectile, function on_overlap4(sprite: Sprite, otherSprite: Sprite) {
     giant_rat.destroy()

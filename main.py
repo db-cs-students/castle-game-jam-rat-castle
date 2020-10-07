@@ -752,7 +752,7 @@ sprites.on_destroyed(SpriteKind.player, on_destroyed2)
 info.start_countdown(25)
 
 #make title screen
-game.splash("Rat Castle")
+game.splash("Rat Castle: 'The princess is in another castle.'")
 
 #Make big rat die
 def on_overlap4(sprite, otherSprite):
