@@ -425,7 +425,7 @@ let rat = sprites.create(img`
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 `)
-rat.setPosition(350, 190)
+rat.setPosition(350, 225)
 rat.setKind(SpriteKind.Enemy)
 rat.ay = 150
 let rat2 = sprites.create(img`
@@ -462,7 +462,7 @@ let rat2 = sprites.create(img`
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 `)
-rat2.setPosition(450, 190)
+rat2.setPosition(450, 225)
 rat2.setKind(SpriteKind.Enemy)
 rat2.ay = 150
 let rat3 = sprites.create(img`
@@ -499,7 +499,7 @@ let rat3 = sprites.create(img`
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 `)
-rat3.setPosition(550, 190)
+rat3.setPosition(550, 225)
 rat3.setKind(SpriteKind.Enemy)
 rat3.ay = 150
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function on_overlap(sprite: Sprite, otherSprite: Sprite) {

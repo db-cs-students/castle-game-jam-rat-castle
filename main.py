@@ -431,7 +431,7 @@ rat = sprites.create(img("""
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 """))
-rat.set_position(350, 190)
+rat.set_position(350, 225)
 rat.set_kind(SpriteKind.enemy)
 rat.ay = 150
 
@@ -469,7 +469,7 @@ rat2 = sprites.create(img("""
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 """))
-rat2.set_position(450, 190)
+rat2.set_position(450, 225)
 rat2.set_kind(SpriteKind.enemy)
 rat2.ay = 150
 
@@ -507,7 +507,7 @@ rat3 = sprites.create(img("""
     ........eeeee..eeee.............
     ........eeeee..eeee.............
 """))
-rat3.set_position(550, 190)
+rat3.set_position(550, 225)
 rat3.set_kind(SpriteKind.enemy)
 rat3.ay = 150
 
